@@ -48,16 +48,16 @@ func bluemix_login() {
 	fmt.Print("password for bluemix: ")
 	pass := gopass.GetPasswd()
 
-	plugin.CliCommand("login", "-a", host, "-u", user, "-p", string(pass), "-o", "cfplayground", "-s", "test")
+	plugin.CliCommand("login", "-a", host, "-u", user, "-p", string(pass), "-o", "cfplayground", "-s", "dev")
 }
 
 func bluemix_push() {
 	var gitUrl string
 
-	fmt.Print("Source code repo url: (https://github.com/simonleung8/cf_sample_app.git) ")
+	fmt.Print("Source code repo url: (https://github.com/simonleung8/dora.git) ")
 	fmt.Scanf("%s", &gitUrl)
 
-	gitUrl = "https://github.com/simonleung8/cf_sample_app.git"
+	gitUrl = "https://github.com/simonleung8/dora.git"
 
 	tmpDir, err := ioutil.TempDir("./", "app-gitpush")
 	if err != nil {
@@ -90,6 +90,6 @@ func cloneRepo(url, outDir string) error {
 
 func pushApp(outDir string) error {
 	fmt.Println("Pushing app to bluemix...")
-	_, err := plugin.CliCommand("push", "-p", "outDir", "sampleApp")
+	_, err := plugin.CliCommand("push", "-p", outDir, "cli_plugin_dora")
 	return err
 }
