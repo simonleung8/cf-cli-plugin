@@ -1,0 +1,79 @@
+{
+	"ImportPath": "github.com/simonleung8/cf_cli_plugin",
+	"GoVersion": "go1.2.1",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "code.google.com/p/go.crypto/ssh/terminal",
+			"Comment": "null-223",
+			"Rev": "31393df5baea9ed8d6778396e7f3896070ea5c04"
+		},
+		{
+			"ImportPath": "code.google.com/p/go.net/websocket",
+			"Comment": "null-147",
+			"Rev": "d3882abcf003a8a50502be58e9f969329d331dce"
+		},
+		{
+			"ImportPath": "code.google.com/p/gogoprotobuf/proto",
+			"Rev": "6c980277330804e94257ac7ef70a3adbe1641059"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry-incubator/candiedyaml",
+			"Rev": "39fb5c673e898bc3343f306217f91f485c40a831"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/cli/plugin",
+			"Comment": "v6.6.2-64-gcaebcad",
+			"Rev": "caebcadfca4f68e0750891146eea7af37f180e7a"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/gofileutils/fileutils",
+			"Rev": "a4a0cae5ff8a342ba01fce700b9e41c6942c0e5e"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/loggregator_consumer",
+			"Rev": "a35b4068c1a008dce5b2a78460ff9828e61b164b"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/loggregatorlib/logmessage",
+			"Rev": "59e4fb600f6a950861ecf3de2f99c71b15cf83d9"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/loggregatorlib/signature",
+			"Rev": "59e4fb600f6a950861ecf3de2f99c71b15cf83d9"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "1.2.0-24-g7381bc4",
+			"Rev": "7381bc4e62942763475703c7edd405f1e42adf4f"
+		},
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Rev": "a6f041ac33b84488bb44137d6866cd3c8706d792"
+		},
+		{
+			"ImportPath": "github.com/howeyc/gopass",
+			"Rev": "438f04ab2449de187e96e9b2dbaead5dde5f78ab"
+		},
+		{
+			"ImportPath": "github.com/nicksnyder/go-i18n/i18n",
+			"Rev": "fdd9ce0eff0447ddec6b10625512f49a726418c1"
+		},
+		{
+			"ImportPath": "github.com/onsi/ginkgo",
+			"Comment": "v1.1.0-12-g90d6a47",
+			"Rev": "90d6a472e25d8096739d5405286ec051c87fade7"
+		},
+		{
+			"ImportPath": "github.com/onsi/gomega",
+			"Comment": "v1.0-12-g3ca2515",
+			"Rev": "3ca2515afb00bc39bc77d27cdbce85a7caaf103e"
+		},
+		{
+			"ImportPath": "github.com/pivotal-cf-experimental/jibber_jabber",
+			"Rev": "66b05988ee1e223bf019acdeeb3e2132c2249942"
+		}
+	]
+}
