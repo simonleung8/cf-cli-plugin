@@ -64,13 +64,32 @@ func bluemix_push() {
 		fmt.Println("Error creating temp dir: ", err)
 		os.Exit(1)
 	}
+	defer os.RemoveAll(tmpDir)
 
-	cmd := exec.Command("git", "clone", gitUrl, tmpDir)
-	cmd.Stdout = os.Stdout
-	cmd.Start()
-	cmd.Wait()
+	if err = cloneRepo(gitUrl, tmpDir); err != nil {
+		fmt.Println("Error cloning git repo:", err)
+		os.Exit(1)
+	}
+
+	if err = pushApp(tmpDir); err != nil {
+		fmt.Println("Error pushing app to bluemix", err)
+		os.Exit(1)
+	}
 }
 
 func main() {
 	plugin.Start(new(IBM_Bluemix))
+}
+
+func cloneRepo(url, outDir string) error {
+	fmt.Println("Cloning git repo ", url, "...")
+	cmd := exec.Command("git", "clone", url, outDir)
+	cmd.Stdout = os.Stdout
+	return cmd.Run()
+}
+
+func pushApp(outDir string) error {
+	fmt.Println("Pushing app to bluemix...")
+	_, err := plugin.CliCommand("push", "-p", "outDir", "sampleApp")
+	return err
 }
