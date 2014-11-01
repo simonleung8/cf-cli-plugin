@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
+	"os/exec"
 
 	"github.com/cloudfoundry/cli/plugin"
 	"github.com/howeyc/gopass"
@@ -25,7 +28,7 @@ func (c *IBM_Bluemix) GetCommands() []plugin.Command {
 			HelpText: "help text for test_1_cmd1",
 		},
 		{
-			Name:     "bluemix_push",
+			Name:     "bluemix-push",
 			HelpText: "help text for test_1_cmd2",
 		},
 	}
@@ -54,11 +57,20 @@ func bluemix_push() {
 	fmt.Print("Source code repo url: (https://github.com/simonleung8/cf_sample_app.git) ")
 	fmt.Scanf("%s", &gitUrl)
 
-	if gitUrl == "" {
-		gitUrl = "https://github.com/simonleung8/cf_sample_app.git"
+	gitUrl = "https://github.com/simonleung8/cf_sample_app.git"
+
+	tmpDir, err := ioutil.TempDir("./", "app-gitpush")
+	if err != nil {
+		fmt.Println("Error creating temp dir: ", err)
+		os.Exit(1)
 	}
+
+	cmd := exec.Command("git", "clone", gitUrl, tmpDir)
+	cmd.Stdout = os.Stdout
+	cmd.Start()
+	cmd.Wait()
 }
 
 func main() {
-	plugin.Start(new(Sample))
+	plugin.Start(new(IBM_Bluemix))
 }

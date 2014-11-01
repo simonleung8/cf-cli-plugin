@@ -12,7 +12,7 @@ GOPATH=$GODEP_GOPATH:$GOPATH go build -o $ROOT_DIR/plugin ./main.go
 
 
 echo -e "\nUninstall CLI plugin..."
-cf uninstall-plugin Sample
+cf uninstall-plugin IBM_Bluemix
 
 echo -e "\nInstall plugin ..."
 cf install-plugin ./plugin
