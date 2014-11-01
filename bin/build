@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set +e
+
+echo -e "\nGenerating Binary..."
+
+ROOT_DIR=$(cd $(dirname $(dirname $0)) && pwd)
+
+GODEP_GOPATH=$ROOT_DIR/Godeps/_workspace
+
+GOPATH=$GODEP_GOPATH:$GOPATH go build -o $ROOT_DIR/plugin ./main.go
+
+
+echo -e "\nUninstall CLI plugin..."
+cf uninstall-plugin Sample
+
+echo -e "\nInstall plugin ..."
+cf install-plugin ./plugin
