@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/simonleung8/cf_cli_plugin",
+	"ImportPath": "github.com/simonleung8/cf-cli-plugin",
 	"GoVersion": "go1.2.1",
 	"Packages": [
 		"./..."
@@ -25,8 +25,8 @@
 		},
 		{
 			"ImportPath": "github.com/cloudfoundry/cli/plugin",
-			"Comment": "v6.6.2-64-gcaebcad",
-			"Rev": "caebcadfca4f68e0750891146eea7af37f180e7a"
+			"Comment": "v6.6.2-77-g1da9ca1",
+			"Rev": "1da9ca1f3a9ed865e6ee315d795e4eb9d3a02a2d"
 		},
 		{
 			"ImportPath": "github.com/cloudfoundry/gofileutils/fileutils",
