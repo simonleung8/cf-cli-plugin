@@ -26,15 +26,15 @@ func (c IBM_Bluemix) GetMetadata() plugin.PluginMetadata {
 		Commands: []plugin.Command{
 			{
 				Name:     "bluemix-login",
-				HelpText: "help text for test_1_cmd1",
+				HelpText: "Options to login to Bosh-lite or Bluemix environment",
 			},
 			{
 				Name:     "bluemix-push",
-				HelpText: "help text for test_1_cmd2",
+				HelpText: "Clone source code from a Github repo and push to Cloud Foundry",
 			},
 			{
 				Name:     "bluemix-all-apps",
-				HelpText: "help text for test_1_cmd3",
+				HelpText: "List all apps from all spaces",
 			},
 		},
 	}
